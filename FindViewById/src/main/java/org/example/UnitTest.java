@@ -134,5 +134,21 @@ public class UnitTest {
         } else {
             System.out.println("test 14 -> ❌");
         }
+        // Test 15
+        View rootView = new ViewGroup(1, new View[]{});
+        foundView = findViewById(rootView, 1);
+        if (foundView != null && foundView.id == 1) {
+            System.out.println("test 15 -> ✅");
+        } else {
+            System.out.println("test 15 -> ❌");
+        }
+        // Test 16
+        rootView = new ViewGroup(3, new View[]{new ViewGroup(6, new View[]{})});
+        foundView = findViewById(rootView, 6);
+        if (foundView != null && foundView.id == 6) {
+            System.out.println("test 16 -> ✅");
+        } else {
+            System.out.println("test 16 -> ❌");
+        }
     }
 }
